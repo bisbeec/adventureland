@@ -211,83 +211,115 @@ header {
     margin-left: 15px; }
     .content .inlineImg img {
       margin-bottom: 0 !important; }
-  .content figcaption {
-    font-style: italic;
-    font-weight: normal;
-    font-family: 'montserrat-light';
-    font-size: .8em;
-    color: #999; }
+    .content .inlineImg figcaption {
+      font-style: italic;
+      font-weight: normal;
+      font-family: 'montserrat-light';
+      font-size: .8em;
+      color: #999; }
 
 .photoGrid {
   padding: 100px 0;
   width: 1000px;
-  margin: 0 auto; }
-  .photoGrid .imgWrap {
-    width: 470px;
-    height: 470px;
+  margin: 0 auto;
+  /****NEW CODE*******/
+  /********************/ }
+  .photoGrid figure {
     position: relative;
     float: left;
-    margin: 10px; }
-    .photoGrid .imgWrap img {
-      width: 100%; }
-    .photoGrid .imgWrap .overlay {
-      background-color: transparent;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 48%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+    /*duke*/
+    background: -webkit-linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
+    background: linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
+    /*duke*/ }
+    .photoGrid figure img {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 0.8; }
+    .photoGrid figure figcaption {
+      padding: 2em;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden; }
+      .photoGrid figure figcaption::before, .photoGrid figure figcaption::after {
+        pointer-events: none; }
+    .photoGrid figure figcaption, .photoGrid figure > a {
       position: absolute;
-      height: 100%;
-      width: 100%;
       top: 0;
       left: 0;
-      -webkit-transition: all .5s ease;
-      transition: all .5s ease; }
-    .photoGrid .imgWrap .text {
-      position: absolute;
       width: 100%;
-      top: 200px;
-      text-align: center; }
-      .photoGrid .imgWrap .text p {
-        letter-spacing: 1px;
-        font-style: italic;
-        line-height: 10px;
-        font-weight: 100;
-        position: relative;
-        top: -10px;
-        color: transparent;
-        -webkit-font-smoothing: antialiased;
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease; }
-        .photoGrid .imgWrap .text p:nth-child(2) {
-          font-style: normal;
-          font-size: 1.2em;
-          text-transform: uppercase;
-          margin-bottom: 30px;
-          top: -5px; }
-      .photoGrid .imgWrap .text a {
-        text-decoration: none;
-        text-transform: uppercase;
-        border: 2px solid transparent;
-        color: transparent;
-        padding: 5px;
-        font-size: .8em;
-        letter-spacing: 1px;
-        font-weight: 100;
-        position: relative;
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;
-        top: 10px; }
-        .photoGrid .imgWrap .text a:hover {
-          background-color: #fff;
-          color: #333 !important; }
-        .photoGrid .imgWrap .text a .mobileShow {
-          display: none; }
-    .photoGrid .imgWrap:hover .overlay {
-      background-color: rgba(0, 0, 0, 0.6); }
-    .photoGrid .imgWrap:hover .text p {
-      color: #fff;
-      top: 0; }
-    .photoGrid .imgWrap:hover .text a {
+      height: 100%; }
+    .photoGrid figure figcaption > a {
+      z-index: 1000;
+      text-indent: 200%;
+      white-space: nowrap;
+      font-size: 0;
+      opacity: 0;
+      position: absolute;
       top: 0;
-      color: #fff;
-      border-color: #fff; }
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .photoGrid figure h2 {
+      word-spacing: -0.15em;
+      font-weight: 300;
+      /*duke*/
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: scale3d(0.8, 0.8, 1);
+      transform: scale3d(0.8, 0.8, 1);
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      font-size: 1.4em;
+      font-family: 'montserrat-light';
+      text-transform: none; }
+      .photoGrid figure h2 span {
+        font-weight: 800;
+        display: block;
+        font-size: 1.4em;
+        font-family: 'montserrat-med';
+        text-transform: uppercase; }
+    .photoGrid figure h2, .photoGrid figure p {
+      margin: 0; }
+    .photoGrid figure img, .photoGrid figure p {
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s; }
+    .photoGrid figure p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 20px;
+      padding: 30px;
+      border: 2px solid #fff;
+      text-transform: none;
+      font-size: 90%;
+      opacity: 0;
+      -webkit-transform: scale3d(0.8, 0.8, 1);
+      transform: scale3d(0.8, 0.8, 1);
+      -webkit-transform-origin: 50% -100%;
+      transform-origin: 50% -100%;
+      font-family: 'montserrat-light'; }
+    .photoGrid figure:hover img {
+      opacity: 0.1;
+      -webkit-transform: scale3d(2, 2, 1);
+      transform: scale3d(2, 2, 1); }
+    .photoGrid figure:hover h2, .photoGrid figure:hover p {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1); }
 
 .snippet {
   clear: both;
@@ -464,6 +496,9 @@ footer {
     #vidWrap .overlay {
       height: 100%; }
 
+  .content {
+    position: static; }
+
   .parallaxImg {
     background-attachment: scroll; }
 
@@ -471,49 +506,8 @@ footer {
     font-size: 5em; }
 
   .photoGrid {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 0;
-    padding-top: 30px; }
-    .photoGrid .imgWrap {
-      width: 49%;
-      height: auto;
-      float: none;
-      margin: 0;
-      margin-bottom: 10px; }
-      .photoGrid .imgWrap .overlay {
-        display: none; }
-      .photoGrid .imgWrap .text {
-        height: 100%;
-        top: 0;
-        -webkit-transition: .3s;
-        transition: .3s;
-        background-color: rgba(0, 0, 0, 0.3); }
-        .photoGrid .imgWrap .text p {
-          position: absolute;
-          color: #fff;
-          text-shadow: 1px 1px 0px #333;
-          bottom: 40%;
-          top: auto !important;
-          width: 100%; }
-          .photoGrid .imgWrap .text p:first-child {
-            margin-bottom: 30px; }
-          .photoGrid .imgWrap .text p:nth-child(2) {
-            margin-bottom: 0; }
-        .photoGrid .imgWrap .text a {
-          text-indent: -9999px;
-          color: #fff;
-          border: none;
-          display: block;
-          height: 100%;
-          width: 100%;
-          top: 0; }
-          .photoGrid .imgWrap .text a:hover {
-            background-color: transparent; }
-        .photoGrid .imgWrap .text:hover {
-          background-color: transparent; } }
+    width: 90%;
+    padding-top: 30px; } }
 @media screen and (max-width: 870px) {
   header {
     padding: 20px;
@@ -572,22 +566,24 @@ footer {
   #mobileCarousel img {
     width: 100%;
     border-bottom: 1px solid #fff; } }
+@media screen and (max-width: 745px) {
+  .photoGrid {
+    width: 100%;
+    padding: 20px; }
+
+  .photoGrid figure {
+    float: none;
+    margin: 20px auto;
+    width: 100%; } }
 @media screen and (max-width: 550px) {
+  #vidWrap {
+    height: 600px; }
+
   header .title h2 a.adventurelandBlue {
     color: lightblue; }
 
   .bannerText {
     top: 200px; }
-
-  .photoGrid {
-    display: block;
-    width: 100%;
-    padding: 10px 20px 25px; }
-    .photoGrid .imgWrap {
-      width: 100%;
-      margin-bottom: 25px; }
-      .photoGrid .imgWrap:last-child {
-        margin-bottom: 0; }
 
   .parallaxImg.banner.bannerStories h1 {
     font-size: 5em; }

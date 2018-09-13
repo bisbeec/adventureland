@@ -277,101 +277,150 @@ header {
 		img {
 			margin-bottom: 0 !important;
 		}
+		figcaption {
+			font-style: italic;
+			font-weight: normal;
+			font-family: 'montserrat-light';
+			font-size: .8em;
+			color: #999;
+		}
 	}
-	figcaption {
-		font-style: italic;
-		font-weight: normal;
-		font-family: 'montserrat-light';
-		font-size: .8em;
-		color: #999;
-	}
+	
 }
 
 .photoGrid {
 	padding: 100px 0;
 	width: 1000px;
 	margin: 0 auto;
-	.imgWrap {
-		width: 470px;
-		height: 470px;
+
+
+	/****NEW CODE*******/
+	figure {
 		position: relative;
 		float: left;
-		margin: 10px;
+		overflow: hidden;
+
+		margin: 10px 1%;
+		min-width: 320px;
+		max-width: 480px;
+		max-height: 360px;
+		width: 48%;
+		height: auto;
+		
+		background: #3085a3;
+		text-align: center;
+		cursor: pointer;
+
+		/*duke*/
+		background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+		background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+
 		img {
-			width: 100%;
+			position: relative;
+			display: block;
+			min-height: 100%;
+			max-width: 100%;
+			opacity: 0.8;
 		}
-		.overlay {
-			background-color: transparent;
-		    position: absolute;
-		    height: 100%;
-		    width: 100%;
-		    top: 0;
-		    left: 0;
-		    @include transitionTwo;
+		figcaption {
+			padding: 2em;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.25em;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			&::before, &::after {
+				pointer-events: none;
+			}
 		}
-
-		.text {
+		figcaption, >a {
 			position: absolute;
-		    width: 100%;
-		    top: 200px;
-		    text-align: center;
-		    p {
-		    	letter-spacing: 1px;
-		        font-style: italic;
-		      	line-height: 10px;
-		      	font-weight: 100;
-		      	position: relative;
-		      	top: -10px;
-		      	color: transparent;
-		      	-webkit-font-smoothing: antialiased;
-		      	@include transitionThree;
-		      	&:nth-child(2) {
-		      		font-style: normal;
-			        font-size: 1.2em;
-			        text-transform: uppercase;
-			        margin-bottom: 30px;
-			        top: -5px;
-		      	}
-		    }
-		    a {
-		        text-decoration: none;
-		      	text-transform: uppercase;
-		      	border: 2px solid transparent;
-		      	color: transparent;
-		      	padding: 5px;
-		      	font-size: .8em;
-		      	letter-spacing: 1px;
-		      	font-weight: 100;
-		      	position: relative;
-		      	@include transitionThree;
-		      	top: 10px;
-		      	&:hover {
-		      		background-color: #fff;
-        			color: #333 !important;
-		      	}
-		      	.mobileShow {
-		      		display: none;
-		      	}
-		    }
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 
+		figcaption > a {
+			z-index: 1000;
+			text-indent: 200%;
+			white-space: nowrap;
+			font-size: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		h2 {
+			word-spacing: -0.15em;
+			font-weight: 300;
+			/*duke*/
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: scale3d(0.8,0.8,1);
+			transform: scale3d(0.8,0.8,1);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+			font-size: 1.4em;
+			font-family: 'montserrat-light';
+			text-transform: none;
+			span {
+				font-weight: 800;
+				display: block;
+				font-size: 1.4em;
+				font-family: 'montserrat-med';
+				text-transform: uppercase;
+			}
+		}
+		h2, p {
+			margin: 0;
+		}
+
+		/*duke*/
+		img, p {
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+		}
+		p {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin: 20px;
+			padding: 30px;
+			border: 2px solid #fff;
+			text-transform: none;
+			font-size: 90%;
+			opacity: 0;
+			-webkit-transform: scale3d(0.8,0.8,1);
+			transform: scale3d(0.8,0.8,1);
+			-webkit-transform-origin: 50% -100%;
+			transform-origin: 50% -100%;
+			font-family: 'montserrat-light';
 		}
 		&:hover {
-			.overlay {
-				background-color: rgba(0, 0, 0, 0.6);
+			img {
+				opacity: 0.1;
+				-webkit-transform: scale3d(2,2,1);
+				transform: scale3d(2,2,1);
 			}
-			.text {
-				p {
-					color: #fff;
-    				top: 0;
-				}
-				a {
-					top: 0;
-    				color: #fff;
-    				border-color: #fff;
-				}
+			h2, p {
+				opacity: 1;
+				-webkit-transform: scale3d(1,1,1);
+				transform: scale3d(1,1,1);
 			}
 		}
 	}
+
+
+
+	/********************/
+
+
+
+	
 }
 
 .snippet {
@@ -586,6 +635,9 @@ footer {
 			height: 100%;
 		}
 	} 
+	.content {
+		position: static;
+	}
 
 	.parallaxImg {
 		background-attachment: scroll;
@@ -595,58 +647,9 @@ footer {
 		font-size: 5em;
 	}
 	.photoGrid {
-		width: 80%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		padding-bottom: 0;
+		width: 90%;
 		padding-top: 30px;
-		.imgWrap {
-			width: 49%;
-			height: auto;
-			float: none;
-			margin: 0;
-			margin-bottom: 10px;
-			.overlay {
-				display: none;
-			}
-			.text {
-				height: 100%;
-				top: 0;
-				@include transition;
-				background-color: rgba(0,0,0,.3);
-				p {
-					position: absolute;
-					color: #fff;
-					text-shadow: 1px 1px 0px #333;
-					bottom: 40%;
-					top: auto !important;
-					width: 100%;
-					&:first-child {
-						margin-bottom: 30px;
-					}
-					&:nth-child(2) {
-						margin-bottom: 0;
-					}
-				}
-				a {
-					text-indent: -9999px;
-					color: #fff;
-					border: none;
-					display: block;
-					height: 100%;
-					width: 100%;
-					top: 0;
-					
-					&:hover {
-						background-color: transparent;
-					}
-				}
-				&:hover {
-					background-color: transparent;
-				}
-			}
-		}
+		
 	}
 }
 
@@ -725,26 +728,30 @@ footer {
 	}
 }
 
+
+@media screen and (max-width: 745px) {
+	.photoGrid {
+		width: 100%;
+		padding: 20px;
+	}
+	.photoGrid figure {
+		float: none;
+		margin: 20px auto;
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 550px) {
+	#vidWrap {
+		height: 600px;
+	}
 	header .title h2 a.adventurelandBlue {
 		color: lightblue;
 	}
 	.bannerText {
 		top: 200px;
 	}
-	.photoGrid {
-		display: block;
-		width: 100%;
-		padding: 10px 20px 25px;
-		.imgWrap {
-			width: 100%;
-			margin-bottom: 25px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
+	
 	.parallaxImg.banner.bannerStories h1 {
 		font-size: 5em;
 	}
