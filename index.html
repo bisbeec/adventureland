@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
+  	<script src="assets/jquery-3.2.0.min.js"></script>
+	<title>Adventureland</title>
+</head>
+<body>
+
+	<header>
+		<div class="title">
+			<h2><a href="index.html">Adventureland</a></h2>
+		</div>
+		<ul class="nav">
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="about.html">About</a>
+			</li>
+			<li>
+				<a href="gallery.html">Gallery</a>
+			</li>
+			<li>
+				<a href="stories.html">Stories</a>
+			</li>
+		</ul>
+		<div id="nav-icon2">
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		</div>
+	</header>
+
+	<div id="vidWrap">
+		<video autoplay loop muted id="my-video" class="video">
+		  	<source src="assets/boat-vid.mp4" type="video/mp4" />
+		  	Your browser does not support the video tag.
+		</video>
+		<div class="overlay"></div>
+	</div>
+
+	<div class="bannerText">
+		<h1>Into the Unknown</h1>
+		<p>And back again</p>
+		<a href="stories.html" class="btn btn-red">Read The Stories</a>
+	</div>
+	<div class="content">
+		<div class="photoGrid">
+			<div class="imgWrap">
+				<img src="assets/images/square/novosibirsk-scene.jpg" alt="Novosibirsk, Russia">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Novosibirsk</p>
+					<p>Russia</p>
+					<a href="stories.html#novosibirsk-entry">Read about it</a>
+				</div>
+			</div>
+			<div class="imgWrap">
+				<img src="assets/images/square/namib-charlie-car.jpg" alt="Keetmanshoop, Namibia">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Keetmanshoop</p>
+					<p>Namibia</p>
+					<a href="stories.html#keetmanshoop-entry">Read about it</a>
+				</div>
+			</div>
+			<div class="imgWrap">
+				<img src="assets/images/square/korea-kids.jpg" alt="Guri, South Korea">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Guri</p>
+					<p>South Korea</p>
+					<a href="stories.html#guri-entry">Read about it</a>
+				</div>
+			</div>
+			<div class="imgWrap">
+				<img src="assets/images/square/lake-matheson.jpg" alt="Lake Matheson, New Zealand">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Lake Matheson</p>
+					<p>New Zealand</p>
+					<a href="stories.html#lakematheson-entry">Read about it</a>
+				</div>
+			</div>
+			<div class="imgWrap">
+				<img src="assets/images/square/turpan.jpg" alt="Turpan, China">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Turpan</p>
+					<p>China</p>
+					<a href="stories.html#turpan-entry">Read about it</a>
+				</div>
+			</div>
+			<div class="imgWrap">
+				<img src="assets/images/square/death-val-dunes.jpg" alt="Death Valley Dunes">
+				<div class="overlay"></div>
+				<div class="text">
+					<p>Death Valley</p>
+					<p>California</p>
+					<a href="stories.html#deathval-entry">Read about it</a>
+				</div>
+			</div>
+		</div>
+		<div class="snippet">
+			<img id="quotes" src="assets/images/quotation-marks.png" alt="Quotation">
+			<p><strong>A side mirror was held together with bits of electric tape,</strong> the undercarriage rattled with a disturbing, pulsating frequency, and the whole rig listed considerably to port, giving me the sensation of traveling down the Russian freeway in a hell-bent Titanic.</p>
+		</div>
+		<div class="parallaxWrap">
+			<div class="parallaxImg parImgOne">
+				<div class="text">
+					<h2>I drove 5 hours through the desert in a Chevy Aveo looking for Solitaire.</h2>
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<div class="parallaxImg parImgTwo">
+				<div class="text">
+					<h2>In Urumqi, east meets further east.</h2>
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<div class="parallaxImg parImgThree">
+				<div class="text">
+					<h2>Providing lions with sanctuary and severed horse legs at Glen Afric.</h2>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		</div>
+		<footer>
+			<p>website by <a href="http://charliebisbee.com" target="_blank">cbwd</a></p>
+		</footer>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#nav-icon2').click(function(){
+				$(this).toggleClass('open');
+				$('.nav').toggleClass('navShow');
+				$('header .title h2 a').toggleClass('adventurelandBlue');
+			});
+		});
+	</script>
+</body>
+</html>

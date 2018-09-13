@@ -1,0 +1,779 @@
+@font-face {
+	font-family: 'montserrat-bold';
+	src: url('fonts/Montserrat-Bold.otf');
+}
+@font-face {
+	font-family: 'montserrat-med';
+	src: url('fonts/Montserrat-Medium.otf');
+}
+@font-face {
+	font-family: 'montserrat-light';
+	src: url('fonts/Montserrat-Light.otf');
+}
+@font-face {
+	font-family: 'lato-italic';
+	src: url('fonts/Lato-Italic.ttf');
+}
+
+body {
+	font-family: 'montserrat-med', sans-serif;	
+	overflow-x: hidden;
+}
+
+$red: #b20000;
+$red2: #6a0000;
+
+@mixin transition {
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+@mixin transitionTwo {
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+@mixin transitionThree {
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+strong {
+	font-family: 'montserrat-bold';
+}
+
+h1, h2, h3 {
+	letter-spacing: 1px;
+}
+
+.btn {
+	color: #fff !important;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-radius: 0;
+	padding: 15px 20px;
+	font-size: 1.2em;
+	@include transition;
+}
+
+.btn-red {
+	background-color: $red;
+	&:hover {
+		background-color: $red2;
+	}
+}
+
+#vidWrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	video {
+		position: fixed;
+		background-image: url('images/philippines-boat.jpg');
+		background-size: cover;
+	 	top: 50%; 
+	    left: 50%;
+	    z-index: 1;
+	  	min-width: 100%;
+	  	min-height: 100%;
+	  	width: auto;
+	  	height: auto;
+	  	transform: translate(-50%, -50%);
+	}
+	.overlay {
+		background-color: rgba(0,0,0,.3);
+		position: absolute;
+		height: 1000px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+
+header {
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	left: 0;
+	top: 0;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: 'montserrat-bold';
+	padding: 20px 70px;
+	.title {
+		float: left;
+		h2 {
+			letter-spacing: 2px;
+			font-size: 1.8em;
+			margin: 0;
+			margin-top: 5px;
+			a {
+				text-decoration: none !important;
+				color: #fff;
+				position: relative;
+				z-index: 1;
+				@include transition;
+			}
+		}
+	}
+	.nav {
+		float: right;
+		li {
+			display: inline-block;
+			a {
+				color: #fff;
+				font-size: .9em;
+				letter-spacing: 2px;
+				&:hover {
+					background-color: transparent;
+					opacity: .8;
+				}
+			}
+		}
+	}
+	#nav-icon2 {
+		width: 60px;
+	  	height: 45px;
+		position: absolute;
+		right: 20px;
+		top: 10px;
+		-webkit-transition: .5s ease-in-out;
+		-moz-transition: .5s ease-in-out;
+		-o-transition: .5s ease-in-out;
+		transition: .5s ease-in-out;
+		cursor: pointer;
+		transform: scale(.6);
+		display: none;
+		span {
+			display: block;
+			position: absolute;
+			height: 9px;
+			width: 50%;
+			background-color: #fff;
+			opacity: 1;
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transition: .25s ease-in-out;
+			-moz-transition: .25s ease-in-out;
+			-o-transition: .25s ease-in-out;
+			transition: .25s ease-in-out;
+			&:nth-child(even) {
+				left: 50%;
+  				border-radius: 0 9px 9px 0;
+			}
+			&:nth-child(odd) {
+				left: 0px;
+				border-radius: 9px 0 0 9px;
+			}
+			&:nth-child(1), &:nth-child(2) {
+				top: 0px;
+			}
+			&:nth-child(3), &:nth-child(4) {
+				top: 18px;
+			}
+			&:nth-child(5), &:nth-child(6) {
+				top: 36px;
+			}
+		}
+		&.open {
+			span {
+				background-color: #ccc;
+				&:nth-child(1), &:nth-child(6) {
+					-webkit-transform: rotate(45deg);
+  					-moz-transform: rotate(45deg);
+  					-o-transform: rotate(45deg);
+  					transform: rotate(45deg);
+				}
+				&:nth-child(2), &:nth-child(5) {
+					-webkit-transform: rotate(-45deg);
+  					-moz-transform: rotate(-45deg);
+  					-o-transform: rotate(-45deg);
+  					transform: rotate(-45deg);
+				}
+				&:nth-child(1) {
+					left: 5px;
+					top: 7px;
+				}
+				&:nth-child(2) {
+					left: calc(50% - 5px);
+					top: 7px;
+				}
+				&:nth-child(3) {
+					left: -50%;
+					opacity: 0;
+				}
+				&:nth-child(4) {
+					left: 100%;
+					opacity: 0;
+				}
+				&:nth-child(5) {
+					left: 5px;
+					top: 29px;
+				}
+				&:nth-child(6) {
+					left: calc(50% - 5px);
+					top: 29px;
+				}
+			}
+		}
+	}
+}
+
+.bannerText {
+	position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 300px;
+    text-align: center;
+    color: #fff;
+    h1 {
+    	font-family: 'montserrat-bold';
+    	font-size: 7em;
+    }
+    p {
+    	font-size: 1.7em;
+    	margin: 1.5em 0 2em;
+    	font-family: 'lato-italic';
+    }
+}
+
+.content {
+	background-color: #fff;
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	left: 0;
+
+	top: 800px;
+	&.interior {
+		max-width: 690px;
+		margin: 10em auto;
+		padding: 0 20px;
+		position: static;
+		line-height: 26px;
+		p {
+			font-family: 'montserrat-light';
+		}
+		.entryWrap {
+			margin-bottom: 9em; 
+			.entryDate {
+				margin: 2em 0;
+			}
+			img {
+				width: 100%;
+				margin-bottom: 2em;
+			}
+		}
+	}
+	.inlineImg {
+		float: right;
+		width: 200px;
+		margin-left: 15px;
+		img {
+			margin-bottom: 0 !important;
+		}
+	}
+	figcaption {
+		font-style: italic;
+		font-weight: normal;
+		font-family: 'montserrat-light';
+		font-size: .8em;
+		color: #999;
+	}
+}
+
+.photoGrid {
+	padding: 100px 0;
+	width: 1000px;
+	margin: 0 auto;
+	.imgWrap {
+		width: 470px;
+		height: 470px;
+		position: relative;
+		float: left;
+		margin: 10px;
+		img {
+			width: 100%;
+		}
+		.overlay {
+			background-color: transparent;
+		    position: absolute;
+		    height: 100%;
+		    width: 100%;
+		    top: 0;
+		    left: 0;
+		    @include transitionTwo;
+		}
+
+		.text {
+			position: absolute;
+		    width: 100%;
+		    top: 200px;
+		    text-align: center;
+		    p {
+		    	letter-spacing: 1px;
+		        font-style: italic;
+		      	line-height: 10px;
+		      	font-weight: 100;
+		      	position: relative;
+		      	top: -10px;
+		      	color: transparent;
+		      	-webkit-font-smoothing: antialiased;
+		      	@include transitionThree;
+		      	&:nth-child(2) {
+		      		font-style: normal;
+			        font-size: 1.2em;
+			        text-transform: uppercase;
+			        margin-bottom: 30px;
+			        top: -5px;
+		      	}
+		    }
+		    a {
+		        text-decoration: none;
+		      	text-transform: uppercase;
+		      	border: 2px solid transparent;
+		      	color: transparent;
+		      	padding: 5px;
+		      	font-size: .8em;
+		      	letter-spacing: 1px;
+		      	font-weight: 100;
+		      	position: relative;
+		      	@include transitionThree;
+		      	top: 10px;
+		      	&:hover {
+		      		background-color: #fff;
+        			color: #333 !important;
+		      	}
+		      	.mobileShow {
+		      		display: none;
+		      	}
+		    }
+
+		}
+		&:hover {
+			.overlay {
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+			.text {
+				p {
+					color: #fff;
+    				top: 0;
+				}
+				a {
+					top: 0;
+    				color: #fff;
+    				border-color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.snippet {
+	clear: both;
+	font-family: 'montserrat-light';
+	padding: 70px 20px;
+	max-width: 620px;
+	margin: 0 auto;
+	line-height: 24px;
+	position: relative;
+	#quotes {
+		position: absolute;
+		width: 100px;
+		top: 30px;
+		left: 0;
+		z-index: 1;
+	}
+	p {
+		z-index: 2;
+		position: relative;
+	}
+}
+
+.parallaxImg {
+	min-height: 600px;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom: 2px solid #fff;
+    .text {
+    	max-width: 740px;
+    	margin: 0 auto;
+    	text-align: center;
+    	padding-top: 17em;
+    	padding-left: 20px;
+    	padding-right: 20px;
+    	position: relative;
+    	z-index: 1;
+    	h2 {
+    		font-family: 'montserrat-light';
+    		color: #fff;
+    		line-height: 45px;
+    		margin: 0;
+    	}
+    }
+    .overlay {
+    	position: absolute;
+    	height: 100%;
+    	width: 100%;
+    	background-color: rgba(0,0,0,.2);
+    	top: 0;
+    }
+    &.parImgOne {
+    	background-image: url(images/solitaire-car.jpg);
+    }
+    &.parImgTwo {
+    	background-image: url(images/arabic-sign.jpg);
+    }
+    &.parImgThree {
+    	background-image: url(images/sa-lion.jpg);
+    	border-bottom: none;
+    }
+    &.parImgFour {
+    	background-image: url(images/gobi-camel.jpg);
+    }
+    &.parImgFive {
+    	background-image: url(images/pukaki.jpg);
+    	.btn {
+    		margin-top: 2em;
+    	}
+    }
+    &.banner {
+    	border-bottom: none;
+    	min-height: 800px;
+    	&.bannerAbout {
+    		background-image: url(images/namib-charlie.jpg);
+    	}
+    	&.bannerStories {
+    		background-image: url(images/china-tractor.jpg);
+    		min-height: 600px;
+    		h1 {
+    			margin-top: 0;
+    			font-size: 7.5em;
+    		}
+    	}
+    	h1 {
+    		color: #fff;
+    		margin-top: 2em;
+    		letter-spacing: 3px;
+    		font-size: 5.5em;
+    		font-family: 'montserrat-bold';
+    	}
+    }
+}
+
+
+footer {
+	background-color: #222;
+	color: #aaa;
+	font-family: 'montserrat-light';
+	text-align: center;
+	height: 200px;
+	p {
+		font-weight: 100;
+		padding-top: 90px;
+		letter-spacing: 1px;
+		a {
+			color: #ccc !important;
+			@include transition;
+			&:hover {
+				color: #fff !important;
+				text-decoration: none;
+			}
+		}
+	}
+}
+#mobileCarousel {
+	display: none;
+}
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+*/
+.carousel-control {
+	background-image: none !important;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+	font-size: 20px;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+  p {
+  	    color: #ccc;
+    	position: absolute;
+    	z-index: 1;
+    	bottom: 14px;
+    	right: 20px;
+    	letter-spacing: 1px;
+    	font-family: 'montserrat-light';
+    	font-style: italic;
+    	font-size: .7em;
+  }
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+	#vidWrap {
+		background-image:url(images/philippines-boat.jpg);
+		position: relative;
+		background-size: cover;
+		height: 750px;
+		overflow-x: hidden;
+		video {
+			display: none;
+		}
+		.overlay {
+			height: 100%;
+		}
+	} 
+
+	.parallaxImg {
+		background-attachment: scroll;
+	}
+
+	.bannerText h1 {
+		font-size: 5em;
+	}
+	.photoGrid {
+		width: 80%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-bottom: 0;
+		padding-top: 30px;
+		.imgWrap {
+			width: 49%;
+			height: auto;
+			float: none;
+			margin: 0;
+			margin-bottom: 10px;
+			.overlay {
+				display: none;
+			}
+			.text {
+				height: 100%;
+				top: 0;
+				@include transition;
+				background-color: rgba(0,0,0,.3);
+				p {
+					position: absolute;
+					color: #fff;
+					text-shadow: 1px 1px 0px #333;
+					bottom: 40%;
+					top: auto !important;
+					width: 100%;
+					&:first-child {
+						margin-bottom: 30px;
+					}
+					&:nth-child(2) {
+						margin-bottom: 0;
+					}
+				}
+				a {
+					text-indent: -9999px;
+					color: #fff;
+					border: none;
+					display: block;
+					height: 100%;
+					width: 100%;
+					top: 0;
+					
+					&:hover {
+						background-color: transparent;
+					}
+				}
+				&:hover {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 870px) {
+	header {
+		padding: 20px;
+		height: 300px;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		.nav {
+			background-color: #333;
+			float: none;
+			position: absolute;
+			right: -200px;
+			top: 0;
+			padding: 80px 20px 25px 50px;
+			text-align: right;
+			@include transitionTwo;
+			&.navShow {
+				right: 0;
+			}
+			li {
+				display: block;
+				font-size: 1.2em;
+				line-height: 30px;
+			}
+		}
+		#nav-icon2 {
+			display: block;
+		}
+		&.fixedHeaderMobile {
+			position: fixed;
+		}
+		.title {
+			h2 {
+				margin-top: 0;
+			}
+		}
+	}
+	.content {
+		&.interior {
+			margin: 5em auto;
+			.entryWrap {
+				margin-bottom: 5em;
+			}
+		}
+	}
+	#myCarousel {
+		display: none;
+	}
+	#mobileCarousel {
+		display: block;
+	}
+
+	#mobileCarousel .imgContainer {
+		position: relative;
+		span {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			font-family: 'montserrat-light';
+			color: #ccc;
+			font-size: .8em;
+			font-weight: 100;
+			font-style: italic;
+			letter-spacing: 1px;
+			&.dark {
+				color: #333;
+			}
+		}
+	}
+
+	#mobileCarousel img {
+		width: 100%;
+		border-bottom: 1px solid #fff;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	header .title h2 a.adventurelandBlue {
+		color: lightblue;
+	}
+	.bannerText {
+		top: 200px;
+	}
+	.photoGrid {
+		display: block;
+		width: 100%;
+		padding: 10px 20px 25px;
+		.imgWrap {
+			width: 100%;
+			margin-bottom: 25px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.parallaxImg.banner.bannerStories h1 {
+		font-size: 5em;
+	}
+
+	.parallaxImg.banner h1 {
+		font-size: 5em;
+	}
+	.entryTitle {
+		font-size: 2em;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	.bannerText h1 {
+		font-size: 4em;
+		padding: 0 20px;
+	}
+	header .title h2 {
+		font-size: 1.5em;
+		margin-top: 3px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	header .title h2 {
+		font-size: 1.3em;
+	}
+	header #nav-icon2 {
+		transform: scale(.5);
+	}
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
+	<script src="assets/jquery-3.2.0.min.js"></script>
+	<title>Adventureland - About</title>
+</head>
+<body>
+
+	<header>
+		<div class="title">
+			<h2><a href="index.html">Adventureland</a></h2>
+		</div>
+		<ul class="nav">
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="about.html">About</a>
+			</li>
+			<li>
+				<a href="gallery.html">Gallery</a>
+			</li>
+			<li>
+				<a href="stories.html">Stories</a>
+			</li>
+		</ul>
+		<div id="nav-icon2">
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		  	<span></span>
+		</div>
+	</header>
+	
+	<div class="parallaxWrap">
+		<div class="parallaxImg banner bannerAbout">
+			<div class="text">
+				<h1>Charlie Bisbee</h1>
+			</div>
+			<div class="overlay"></div>
+		</div>
+	</div>
+	<div class="content interior about">
+		<p><strong>I'm a quasi-nomad</strong> who has traveled through Asia and Oceania, Europe and Scandanavia, Central and North America and parts of southern Africa. I frequently travel without concrete plans, having discovered that doing so leads to the most noteworthy (if occasionally hair-raising) experiences.</p>
+		<p>This site is a shameless vanity project - it's been fun to dig up old memories and photographs. The stories are all true as I remember them, though some omit sordid details while others end rather abruptly so as not to offend the fragile sensibilities of my dear mother.</p>
+		<p>When not galavanting, I live in northern Vermont and split my years working as a park ranger and freelance software developer. I can be contacted either by email at <a href="mailto:bisbeec@gmail.com">bisbeec@gmail.com</a> or by phone at <a href="tel:8027776807">802.777.6807</a>.</p>
+	</div>
+	<div class="parallaxWrap">
+		<div class="parallaxImg parImgFour">
+			<div class="text">
+				<h2>In the Gobi, camels have their own agendas.</h2>
+			</div>
+			<div class="overlay"></div>
+		</div>
+		<div class="parallaxImg parImgFive">
+			<div class="text">
+				<h2>New Zealand knocks you over the head with unrelenting beauty.</h2>
+				<a href="stories.html#lakematheson-entry" class="btn btn-red">Read the story</a>
+			</div>
+			<div class="overlay"></div>
+		</div>
+	</div>
+	<footer>
+		<p>website by <a href="http://charliebisbee.com" target="_blank">cbwd</a></p>
+	</footer>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#nav-icon2').click(function(){
+				$(this).toggleClass('open');
+				$('.nav').toggleClass('navShow');
+				$('header .title h2 a').toggleClass('adventurelandBlue');
+			});
+		});
+	</script>
+</body>
+</html>
